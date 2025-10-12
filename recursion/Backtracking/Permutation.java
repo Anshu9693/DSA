@@ -19,6 +19,6 @@ public class Permutation {
         return ans;
     }
     public static void main(String[] args) {
-       System.out.println( permut("", "ABC"));
+       System.out.println( permut("", "ABCDE"));
     }
 }
