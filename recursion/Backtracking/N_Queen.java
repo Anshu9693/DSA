@@ -2,7 +2,7 @@ package Backtracking;
 
 import java.util.*;
 
-class N_Queen {
+class N_ {
 
     public static boolean isSafe(int row,int col,char[][]board){
         for(int i =0;i<board.length;i++){
