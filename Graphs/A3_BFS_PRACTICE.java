@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 class Edge {
     int src;
@@ -10,7 +10,7 @@ class Edge {
     }
 }
 
-public class A1_BFS {
+public class A3_BFS_PRACTICE {
 
     public static void createGraph(ArrayList<Edge> graph[]) {
         for (int i = 0; i < graph.length; i++) {
@@ -42,10 +42,10 @@ public class A1_BFS {
 
     }
 
-    public static void BFS(ArrayList<Edge> graph[], int v) {
+    public static void BFS(ArrayList<Edge> graph[], int v, boolean visit[], int start) {
         Queue<Integer> q = new LinkedList<>();
-        boolean visit[] = new boolean[v];
-        q.add(0);
+
+        q.add(start);
         while (!q.isEmpty()) {
             int curr = q.remove();
             if (visit[curr] == false) {
@@ -55,22 +55,22 @@ public class A1_BFS {
                     Edge e = graph[curr].get(i);
                     q.add(e.dest);
                 }
-
             }
-
         }
     }
 
     public static void main(String[] args) {
-        System.out.println("This is A1_BFS class");
-
-        ArrayList<Edge> graph[] = new ArrayList[7];
+        int v = 7;
+        ArrayList<Edge> graph[] = new ArrayList[v];
+        boolean visit[] = new boolean[v];
         createGraph(graph);
-        BFS(graph, 7);
-        // for (int i = 0; i < graph[3].size(); i++) {
-        // Edge e = graph[3].get(i);
-        // System.out.println(e.dest);
-        // }
+
+        for (int i = 0; i < visit.length; i++) {
+            if (visit[i] == false) {
+                BFS(graph, v, visit, i);
+
+            }
+        }
 
     }
 }

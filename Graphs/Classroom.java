@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Classroom {
+public class Classroom {  
 
     static class Edge {
         int src;
